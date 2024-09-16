@@ -1,10 +1,14 @@
 # COMP2245-A1
 This is my first assignment for my class COMP2245 Web Development Concepts, Tools and Practice. I am tasked to create a website for a gym managment system. The system will allow administrators to enrol new gym members and sign on personal trainers. It will allow personal trainers to see the training session schedule and book personal training sessions with members. Members will be able to see their accounts and any personal training sessions they have. Everyone will be able to view the activities scheduled in the gym using the ubiquitous Gym Schedule link that is part of the hamburger menu that is found on the top left corner of most of the pages. The functional requirements that must be met for this assignment are described below.
 
-1. Figure 1 shows the starting console page of the management system. The HTML file for this page is named index.html. It is the first page that everyone who is not logged in, or has been logged out, sees of the application.
+1. Figure 1 shows the starting console page of the management system. The HTML file for this page is named **index.html**. It is the first page that everyone who is not logged in, or has been logged out, sees of the application.
 
 ![Screenshot 2024-09-16 065415](https://github.com/user-attachments/assets/c4876489-6539-48fb-b900-78ce8ee72821)
-Figure 1: The main page for the application
+**<sub>Figure 1: The main page for the application</sub>**
+
+   - The image in the top right-hand corner is the company’s logo. Select or create an image that is 80x86 pixels in size to make the logo. If you have selected an image from the web, ensure that it is at least under the Creative Commons licence. (3 marks)
+
+   - The two large buttons are clickable. The Members button goes to Members log in page and the Trainers button goes to the Trainers login page.
 
 - [ ] Start with the page design and ensure it is mobile first responsive, that is, it displays properly on mobile and desktop devices. Pick any colour scheme/theme you like that is appropriate.
 - [ ] Write the JavaScript functions and make sure they produce the correct output. You can also create some function to display error messages to make your code more modular.
