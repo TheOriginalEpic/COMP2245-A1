@@ -6,9 +6,9 @@ This is my first assignment for my class COMP2245 Web Development Concepts, Tool
 ![Screenshot 2024-09-16 065415](https://github.com/user-attachments/assets/c4876489-6539-48fb-b900-78ce8ee72821)
 **<sub>Figure 1: The main page for the application</sub>**
 
-   - The image in the top right-hand corner is the company’s logo. Select or create an image that is 80x86 pixels in size to make the logo. If you have selected an image from the web, ensure that it is at least under the [Creative Commons licence](https://en.wikipedia.org/wiki/Creative_Commons_license#Types_of_license).
+- The image in the top right-hand corner is the company’s logo. Select or create an image that is 80x86 pixels in size to make the logo. If you have selected an image from the web, ensure that it is at least under the [Creative Commons licence](https://en.wikipedia.org/wiki/Creative_Commons_license#Types_of_license).
 
-   - The two large buttons are clickable. The Members button goes to Members log in page and the Trainers button goes to the Trainers login page.
+- The two large buttons are clickable. The Members button goes to Members log in page and the Trainers button goes to the Trainers login page.
 
 
 2. The Members Login page is shown in Figure 2. The HTML file for this page must be named
@@ -23,13 +23,12 @@ This is my first assignment for my class COMP2245 Web Development Concepts, Tool
 
 - **verifyMemberNumber(mid)**. Takes the string entered in the Membership # textbox as parameter mid and returns a Boolean value that indicates whether the string is in the correct format. A valid membership number starts with the number 9 followed by five numeric characters to form a six-digit number.
 
-- **verifyPassword(pwd)**. Takes the string entered in the password textbox as parameter pwd and returns a Boolean value that indicates whether the string is in the correct format. A valid password must: (i) be between 8 - 16 characters long; (ii) mainly consist of alphanumeric characters but must have at least one of the following special characters: &, $, #, @ and; (iii) have at least one upper case letter and at least one number. (5 marks)
+- **verifyPassword(pwd)**. Takes the string entered in the password textbox as parameter pwd and returns a Boolean value that indicates whether the string is in the correct format. A valid password must: (i) be between 8 - 16 characters long; (ii) mainly consist of alphanumeric characters but must have at least one of the following special characters: &, $, #, @ and; (iii) have at least one upper case letter and at least one number.
 
-c. Create a JavaScript function called loginMember(data) that takes the form’s user input in JSON format through the data parameter. It invokes the verifyMemberNumber and verifyPassword functions to check the user input and if either of these functions return false, then loginMember generates one or more error messages and stops any further processing.
+- Create a JavaScript function called loginMember(data) that takes the form’s user input in JSON format through the data parameter. It invokes the verifyMemberNumber and verifyPassword functions to check the user input and if either of these functions return false, then loginMember generates one or more error messages and stops any further processing.
+If no errors are generated, the verified membership number and password are checked against entries in the members localStorage dataset. If the user-entered membership number/password pair matches an entry in localStorage with the same membership and password, then the full entry is retrieved and used to update the members sessionStorage dataset with the first name, last name and membership number. If no valid entry is found, then the function should return an error message as a string, otherwise, it returns an empty error string.
 
-If no errors are generated, the verified membership number and password are checked against entries in the members localStorage dataset. If the user-entered membership number/password pair matches an entry in localStorage with the same membership and password, then the full entry is retrieved and used to update the members sessionStorage dataset with the first name, last name and membership number. If no valid entry is found, then the function should return an error message as a string, otherwise, it returns an empty error string. (8 marks)
-
-d. Error messages generated either from an improperly formatted username or password, or if the user is not a valid user, must be displayed in red text between the Member Login label and the Membership # textbox. No dialog boxes are to be used to display JavaScript error messages.
+- Error messages generated either from an improperly formatted username or password, or if the user is not a valid user, must be displayed in red text between the Member Login label and the Membership # textbox. No dialog boxes are to be used to display JavaScript error messages.
 
 ## Tasks
 - [ ] Start with the page design and ensure it is mobile first responsive. Pick any colour scheme/theme you like that is appropriate.
