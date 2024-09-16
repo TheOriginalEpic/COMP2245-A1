@@ -14,16 +14,16 @@ This is my first assignment for my class COMP2245 Web Development Concepts, Tool
 2. The Members Login page is shown in Figure 2. The HTML file for this page must be named
 **member_login.html**.
 
-   - The hamburger menu in the top left corner of the page, when clicked, displays a dropdown menu that has the non-clickable menu item View Schedule as its only menu item.
+- The hamburger menu in the top left corner of the page, when clicked, displays a dropdown menu that has the non-clickable menu item View Schedule as its only menu item.
 
-   - The page requires two pieces of information: the gym member’s id number and their password. The Forgot Password link remains on the page when clicked. The data format for the membership id and password must be validated by separate JavaScript functions, which are invoked when the Log In button is clicked. These functions can use JavaScript string manipulation and other functions, but no regular expressions.
+- The page requires two pieces of information: the gym member’s id number and their password. The Forgot Password link remains on the page when clicked. The data format for the membership id and password must be validated by separate JavaScript functions, which are invoked when the Log In button is clicked. These functions can use JavaScript string manipulation and other functions, but no regular expressions.
 
-
+![Screenshot 2024-09-16 073022](https://github.com/user-attachments/assets/12b51fed-21bd-4d5b-aac4-4d64c9da2662)
 **<sub>Figure 2: The Member Login page</sub>**
 
-     - **verifyMemberNumber(mid)**. Takes the string entered in the Membership # textbox as parameter mid and returns a Boolean value that indicates whether the string is in the correct format. A valid membership number starts with the number 9 followed by five numeric characters to form a six-digit number.
+- **verifyMemberNumber(mid)**. Takes the string entered in the Membership # textbox as parameter mid and returns a Boolean value that indicates whether the string is in the correct format. A valid membership number starts with the number 9 followed by five numeric characters to form a six-digit number.
 
-     - **verifyPassword(pwd)**. Takes the string entered in the password textbox as parameter pwd and returns a Boolean value that indicates whether the string is in the correct format. A valid password must: (i) be between 8 - 16 characters long; (ii) mainly consist of alphanumeric characters but must have at least one of the following special characters: &, $, #, @ and; (iii) have at least one upper case letter and at least one number. (5 marks)
+- **verifyPassword(pwd)**. Takes the string entered in the password textbox as parameter pwd and returns a Boolean value that indicates whether the string is in the correct format. A valid password must: (i) be between 8 - 16 characters long; (ii) mainly consist of alphanumeric characters but must have at least one of the following special characters: &, $, #, @ and; (iii) have at least one upper case letter and at least one number. (5 marks)
 
 c. Create a JavaScript function called loginMember(data) that takes the form’s user input in JSON format through the data parameter. It invokes the verifyMemberNumber and verifyPassword functions to check the user input and if either of these functions return false, then loginMember generates one or more error messages and stops any further processing.
 
@@ -32,14 +32,16 @@ If no errors are generated, the verified membership number and password are chec
 d. Error messages generated either from an improperly formatted username or password, or if the user is not a valid user, must be displayed in red text between the Member Login label and the Membership # textbox. No dialog boxes are to be used to display JavaScript error messages.
 
 ## Tasks
-- [ ] Start with the page design and ensure it is mobile first responsive, that is, it displays properly on mobile and desktop devices. Pick any colour scheme/theme you like that is appropriate.
-- [ ] Write the JavaScript functions and make sure they produce the correct output. You can also create some function to display error messages to make your code more modular.
-- [ ] Write the login in functions and make sure that the application pages are only accessible to a logged in user. This means you should create the checkLogin JavaScript function that checks to see if the user is logged in. You can implement the Sign Out functionality at this time if you want.
-- [x] Complete part 1
-- [ ] Complete part 2
-- [ ] Complete part 3
-- [ ] Complete part 4
-- [ ] Complete part 5
-- [ ] Complete part 6
-- [ ] Complete part 7
-- [ ] Complete part 8
+- [ ] Start with the page design and ensure it is mobile first responsive. Pick any colour scheme/theme you like that is appropriate.
+- [ ] Write JavaScript functions and make sure they produce the correct output.
+- [ ] \(Optional) Create function to display error messages to make your code more modular.
+- [ ] Write login in functions and make sure that the application pages are only accessible to a logged in user. Create a checkLogin JavaScript function that checks to see if the user is logged in.
+- [ ] \(Optional) Implement Sign Out functionality.
+- [x] Complete Part 1
+- [ ] Complete Part 2
+- [ ] Complete Part 3
+- [ ] Complete Part 4
+- [ ] Complete Part 5
+- [ ] Complete Part 6
+- [ ] Complete Part 7
+- [ ] Complete Part 8
