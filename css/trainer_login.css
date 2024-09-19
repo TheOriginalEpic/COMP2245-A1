@@ -1,5 +1,4 @@
 
-
 /* Custom Classes */
 
 /* Navbar */
@@ -20,7 +19,7 @@
 	display: none;
 	position: absolute;
 	background-color: #252525;
-	min-width: 7em;
+	min-width: 7.9em;
 	z-index: 1;
  }
 
@@ -30,6 +29,10 @@
 	text-decoration: none;
 	display: block;
 	text-decoration: none;
+}
+
+.h-drop-content li:nth-child(1) {
+ border-bottom: .1em solid rgb(66, 66, 66);
 }
 
 .h-drop-content li:hover {
@@ -102,3 +105,52 @@
 	margin: 0;
 	margin-bottom: 2em;
 }
+
+
+	/* Form Recovery */
+	.f-rInput-flex {
+		justify-content: center;
+		font-size: 1.14rem;
+		padding: 50% 0 1em 0;
+	}
+
+	.f-rInput-flex > label {
+		padding: 1em 0;
+
+	}
+
+	.f-rInput-flex > input {
+		flex: 0;
+	}
+
+	.f-rSubmit-flex > input {
+		padding: .25em 1.2em;
+		margin: 0;
+	}
+
+	/* Popup */
+	.popup {
+		display: none;
+		position: relative;
+		background-color: rgb(37, 37, 37);
+		/* border: 1px solid rgb(17, 17, 17); */
+		padding: .6em;
+		z-index: 1;
+		color: rgb(226, 226, 226);
+		border-radius: 5px;
+		right: .8em;
+		top: .32em;
+		right: 0;
+		/* box-shadow: #252525; */
+	}
+
+	.popup::after {
+		content: "";
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		margin-left: -0.4em;
+		border-width: .4em;
+		border-style: solid;
+		border-color: transparent transparent rgb(37, 37, 37) transparent;
+	}

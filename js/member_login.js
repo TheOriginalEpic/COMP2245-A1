@@ -128,23 +128,40 @@ function loadData() {
     if(!localStorage.getItem("members")) {
         localStorage.setItem("members", JSON.stringify(members));
     }
-
 }
 
-var errorString = '';
 
-var verifyMemberNumber = (mid) => {
+var docDOM = document;
+
+var errorDisplay = function(err, id) {
+	let errorString = [];
+
+	if (err.length != 0) {
+		errorString.push(err);
+		docDOM.getElementById(id).style.display = "block";
+
+		if (errorString.length > 1) {
+			docDOM.getElementById(id).innerHTML = errorString.join("<br>");
+		} else if (errorString.length == 1) {
+			docDOM.getElementById(id).innerHTML = errorString[0];
+		}
+	} else {
+		docDOM.getElementById(id).style.display = "none";
+		docDOM.getElementById(id).innerHTML = "";
+	}
+}
+
+var verifyMemberNumber = function(mid) {
     let IntParse = parseInt(mid);
 
     if (mid.length == 6 && isNaN(IntParse) == false && parseInt(mid[0]) == 9) {
-
         return true;
     }
 
     return false;
 }
 
-var verifyPassword = (pwd) => {
+var verifyPassword = function(pwd) {
     let specialChar = ['&', '$', '#', '@'];
     let passLength = pwd.length;
 
@@ -155,14 +172,16 @@ var verifyPassword = (pwd) => {
     let hasWrongSpecial = false;
 
     if (pwd.length >= 8 && pwd.length <= 16) {
-        for (loop = 0; loop < passLength; loop++) {
-            if (specialChar.includes(pwd[loop])) {
+        for (let loop = 0; loop < passLength; loop++) {
+			let pwdchar = pwd[loop];
+
+            if (specialChar.includes(pwdchar)) {
                 hasSpecial = true;
-            } else if (pwd[loop] >= 'A' && pwd[loop] <= 'Z') {
+            } else if (pwdchar >= 'A' && pwdchar <= 'Z') {
                 hasCapital = true;
-            } else if (pwd[loop] >= 'a' && pwd[loop] <= 'z') {
+            } else if (pwdchar >= 'a' && pwdchar <= 'z') {
                 hasCommon = true;
-            } else if (parseInt(pwd[loop]) >= 1 && parseInt(pwd[loop]) <= 9) {
+            } else if (parseInt(pwdchar) >= 0 && parseInt(pwdchar) <= 9) {
                 hasNumber = true;
             } else {
                 hasWrongSpecial = true;
@@ -177,49 +196,38 @@ var verifyPassword = (pwd) => {
     return false;
 }
 
-var loginMember = (data) => {
+var loginMember = function(data) {
     let formData = JSON.parse(data);
     let memberInput = formData["member_id"];
     let passInput = formData["password"];
     let memberStorage = JSON.parse(localStorage.getItem("members"));
     let memberLength = memberStorage.length;
-    let sessionObject = {};
 
     if (!verifyPassword(passInput)) {
-        errorString += "The password you entred has the incorrect format. ";
-
-        // console.log("The password you entred has the incorrect format. \nPlease make sure that password is between 8 - 16 characters long, \nconsists of alphanumeric characters including a special character: &, $, #, @ \nand has at least one upper case letter and one number.");
+        errorDisplay("The password you entered has the incorrect format", "form-err-text");
+		return false;
+    } else if (!verifyMemberNumber(memberInput)) {
+        errorDisplay("The member # you entered has the incorrect format", "form-err-text");
+		return false;
     }
 
-    if (!verifyMemberNumber(memberInput)) {
-        errorString += "The member # you entred has the incorrect format. ";
-
-        // console.log("The member number you entred has the incorrect format. \nPlease make sure it starts with the number '9' followed by five numeric characters");
-    }
-
-    if (errorString) {
-        return errorString;
-    }
-
-    for (loop = 0; loop < memberLength; loop++) {
+    for (let loop = 0; loop < memberLength; loop++) {
         if (memberStorage[loop]["member_id"] == memberInput && memberStorage[loop]["password"] == passInput) {
-            sessionObject["member_id"] = memberStorage[loop].member_id;
-            sessionObject["firstName"] = memberStorage[loop].firstName;
-            sessionObject["lastName"] = memberStorage[loop].lastName;
-
-            sessionStorage.clear();
-            sessionStorage.setItem("memberLogin", JSON.stringify(sessionObject));
+			sessionStorage.clear();
+            sessionStorage.setItem("member_id", memberStorage[loop].member_id);
+            sessionStorage.setItem("firstName", memberStorage[loop].firstName);
+            sessionStorage.setItem("lastName", memberStorage[loop].lastName);
             break;
         }
     }
 
-    if (!sessionStorage.getItem("memberLogin")) {
-        errorString = "This user does not exsist.";
+    if (!sessionStorage.getItem("member_id")) {
+        errorDisplay("This user does not exsist.", "form-err-text");
+		return false;
     }
 
-    return '';
-}
+	// window.location.href = '';
 
-var invalidMember = () => {
-
+	errorDisplay("", "form-err-text");
+    return true;
 }

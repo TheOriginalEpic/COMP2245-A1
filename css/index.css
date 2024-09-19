@@ -1,11 +1,6 @@
-/* body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
 /* Custom Classes */
 
+/* Header */
 .h-flex {
     display: flex;
     justify-content: center;
@@ -19,14 +14,10 @@
 
 .h-logo-flex {
     display: none;
-    /* flex-grow: 0;
-    flex-shrink: 1; */
 }
 
 .s-flex {
     display: flex;
-    /* align-items: center;
-    flex-direction: column; */
 }
 
 .s-flex > div {

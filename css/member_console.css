@@ -1,6 +1,4 @@
-
-
-/* Custom Classes */
+/* Custom CSS */
 
 /* Navbar */
 .h-drop-flex {
@@ -20,7 +18,7 @@
 	display: none;
 	position: absolute;
 	background-color: #252525;
-	min-width: 7em;
+	min-width: 7.9em;
 	z-index: 1;
  }
 
@@ -30,6 +28,10 @@
 	text-decoration: none;
 	display: block;
 	text-decoration: none;
+}
+
+.h-drop-content li:nth-child(1) {
+    border-bottom: .1em solid rgb(66, 66, 66);
 }
 
 .h-drop-content li:hover {
@@ -57,48 +59,47 @@
 	flex: 1;
 }
 
+.h-title-content:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.h-title-content:last-child p {
+    font-size: 1.1rem
+}
+
 .h-logo-flex {
 	display: none;
 }
 
 
-/* Form */
-.f-flex {
-	width: 13em;
-	margin: auto;
-	text-align: center;
+/* Buttons Section */
+.s-flex {
+    display: flex;
+    flex-direction: column;
 }
 
-.f-input-flex {
-	display: flex;
-	padding: 1.5em 0;
-	align-items: center;
-	flex-wrap: wrap;
-	justify-content: center;
-	font-size: 1.6rem;
+.s-button-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* margin: auto; */
 }
 
-.f-input-flex > label {
-	flex: 1;
-	padding: 1em 0;
+.s-button-flex button {
+    font-size: 1.1rem;
+    padding: 1em 0.8em;
+    margin: 1em 0;
+    width: 10em;
+    height: 5em;
+
+    /* flex: 0;
+    flex-shrink: 1; */
 }
 
-.f-input-flex > input {
-	padding: .7em .5em;
-	flex: 0;
-}
-
-.f-submit-flex {
-	display: flex;
-	flex-direction: column;
-	font-size: 1.3rem;
-	padding: 1.4em 0;
-	align-items: center;
-}
-
-.f-submit-flex > input {
-	font-size: 1.5rem;
-	padding: .25em 1.2em;
-	margin: 0;
-	margin-bottom: 2em;
-}
+/* body {
+    margin: 0;
+    width: 100vw;
+} */

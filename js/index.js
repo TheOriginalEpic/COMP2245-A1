@@ -129,5 +129,4 @@ function loadData()
 	if(!localStorage.getItem("members")) {
 		localStorage.setItem("members", JSON.stringify(members));
 	}
-
 }

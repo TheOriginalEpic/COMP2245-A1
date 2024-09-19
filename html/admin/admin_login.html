@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/admin/admin_login.css">
+    <link rel="icon" type="image/x-icon" href="/resources/TFU-logo-transparent.svg">
+    <title>The Fitness Universe | Gym Manager</title>
+</head>
+<body onload="loadData()">
+    <header class="h-flex">
+		<div class="h-drop-flex">
+			<button type="button" class="h-drop-btn">
+				<svg width="30" height="36" xmlns="http://www.w3.org/2000/svg" version="1.1">
+					<image href="/resources/menu_hamburger.svg" width="30" height="36"/>
+				</svg>
+			</button>
+
+			<div class="h-drop-content">
+				<li>Change Location</li>
+                <li>Gym Schedule</li>
+			</div>
+		</div>
+
+		<div class="h-title-flex">
+			<div>
+				<h1>The Fitness Universe</h1>
+				<h2>Live Your Best Life</h2>
+			</div>
+		</div>
+
+		<div class="h-logo-flex">
+			<svg width="80" height="86" xmlns="http://www.w3.org/2000/svg" version="1.1">
+				<image href="/resources/TFU-logo-transparent.svg" width="80" height="86"/>
+			</svg>
+		</div>
+	</header>
+
+    <section>
+		<form id="manager-form" class="f-flex" autocomplete="off" target="_self" method="POST" onsubmit="return loginEmployee(JSON.stringify({email: this.email.value, password: this.pass.value, employee: this.employee.value}))">
+			<h2>Gym Manager Login</h2>
+
+            <div>
+				<p style="display:none; color:#B81C00;" id="form-err-text"></p>
+			</div>
+
+			<div class="f-input-flex">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" autocomplete="on" required>
+			</div>
+
+			<div class="f-input-flex">
+				<label for="pass">Password</label>
+				<input type="text" maxlength="16" minlength="8" id="pass" name="pass" placeholder="**********" required>
+			</div>
+
+            <div style="display:none;">
+				<input type="hidden" id="employee" name="employee" value="manager" readonly>
+			</div>
+
+			<div class="f-submit-flex">
+				<input type="submit" value="Log In">
+				<a href="forgot_manager.html">Recover Password</a>
+			</div>
+		</form>
+	</section>
+</body>
+
+<script src="/js/admin/admin_login.js"></script>
+</html>

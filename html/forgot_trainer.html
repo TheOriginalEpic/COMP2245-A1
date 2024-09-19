@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/trainer_login.css">
+	<link rel="icon" type="image/x-icon" href="/resources/TFU-logo-transparent.svg">
+	<title>The Fitness Universe | Recover Password</title>
+</head>
+<body onload="loadData()">
+	<section>
+		<form id="recover-form" class="f-flex" autocomplete="on" target="_self" method="POST" onsubmit="return findLostPassword(JSON.stringify({email: this.email_recover.value, trainer: this.trainer.value}))">
+			<div class="f-rInput-flex f-input-flex">
+				<label for="email_recover">Enter the email address <wbr>attached to your account to <wbr>recover your password</label>
+
+				<div>
+					<p style="display:none; color:#B81C00;" id="form-rErr-text"></p>
+				</div>
+
+				<input type="email" name="email_recover" id="email_recover" required>
+				<span class="popup" id="forgot-popup"></span>
+			</div>
+
+
+			<div style="display:none;">
+				<input type="hidden" id="trainer" name="trainer" value="trainer" readonly>
+			</div>
+
+			<div class="f-rSubmit-flex f-submit-flex">
+				<input type="submit" name="recover" id="recover" value="Recover">
+			</div>
+		</form>
+	</section>
+
+
+</body>
+
+<script src="/js/trainer_login.js"></script>
+</html>
