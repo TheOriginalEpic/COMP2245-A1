@@ -36,9 +36,9 @@ This is my first assignment for my class COMP2245 Web Development Concepts, Tool
 
    - The hamburger menu in the top left corner of the page, when clicked, shows a dropdown menu with two non-clickable menu items: Change Location and Gym Schedule.
 
-   - The page requires two pieces of information: the trainer’s email address and password. The format for the email address and password must be validated by two separate JavaScript functions, which are invoked when the Log In button is clicked. These functions can use JavaScript string manipulation and other functions, but no regular expressions.
+   - The page requires two pieces of information: the trainer’s email address and password. The format for the email address and password must be validated by two separate JavaScript functions, which are invoked when the Log In button is clicked. These functions can use JavaScript string manipulation and other functions, but no regular expressions.<br /><br />
 
-
+![Screenshot 2024-09-16 083211](https://github.com/user-attachments/assets/42c34544-08fa-4319-a501-72f7ce3164e7)<br />
 **<sub>Figure 3: The Trainer login page</sub>**<br /><br />
 
    - **verifyEmail(email)**. Takes a valid email entered in the email textbox and ensures that the domain name for the email address is one of three values: fitnessuniverse.com, fitnessuniverse.bb or fitnessu.life. If the domains are valid, it returns true and false otherwise. The input to this function must be a correctly formatted email address.
