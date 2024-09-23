@@ -1,10 +1,10 @@
-
-
 var checkLogin = function() {
-    // sessionStorage.getItem("email");
+    if (!sessionStorage.getItem("member")) {
+		window.location.href = "member_login.html";
+	}
 }
 
 var signOut = function() {
-    sessionStorage.clear();
+    sessionStorage.removeItem("member");
     window.location.href = "member_login.html";
 }

@@ -8,32 +8,30 @@
     <title>The Fitness Universe | Home</title>
 </head>
 <body onload="loadData()">
-    <header class="h-flex">
-        <div class="h-title-flex">
-            <div>
+    <div class="h-flex">
+        <div id="h-title-flex">
+            <div class="h-title-text">
                 <h1>The Fitness Universe</h1>
                 <h2>Live Your Best Life</h2>
             </div>
+
+            <section class="s-flex">
+                <div class="s-button-flex">
+                    <a href="member_login.html"><button class="s-btn">Members</button></a>
+                </div>
+
+                <div class="s-button-flex">
+                    <a href="trainer_login.html"><button class="s-btn">Trainers</button></a>
+                </div>
+            </section>
         </div>
 
-        <div class="h-logo-flex">
+        <div id="h-logo-flex">
             <svg width="80" height="86" xmlns="http://www.w3.org/2000/svg" version="1.1">
                 <image href="/resources/TFU-logo-transparent.svg" width="80" height="86"/>
             </svg>
         </div>
-    </header>
-
-    <section class="s-flex">
-        <div>
-            <div class="s-div-flex">
-                <a href="member_login.html"><button class="s-btn-flex">Members</button></a>
-            </div>
-
-            <div class="s-div-flex">
-                <a href="trainer_login.html"><button class="s-btn-flex">Trainers</button></a>
-            </div>
-        </div>
-    </section>
+    </div>
 </body>
 
 <script src="/js/index.js"></script>

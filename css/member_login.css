@@ -1,72 +1,90 @@
-
-
-/* Custom Classes */
-
-/* Navbar */
-.h-drop-flex {
-	position: relative;
-	display: inline-block;
-	max-height: 2.3em;
-}
-
-.h-drop-btn {
-	background-color: unset;
-	padding: .3em .8em;
-	border: none;
-	cursor: pointer;
-}
-
-.h-drop-content {
-	display: none;
-	position: absolute;
-	background-color: #252525;
-	min-width: 7em;
-	z-index: 1;
- }
-
-.h-drop-content li {
-	color: rgb(201, 201, 201);
-	padding: .4em;
-	text-decoration: none;
-	display: block;
-	text-decoration: none;
-}
-
-.h-drop-content li:hover {
-	background-color: #535353;
-	color: white;
-	cursor: default;
-}
-
-.h-drop-flex:hover .h-drop-content {
-	display: block;
+/* Elements */
+body {
+	margin: 0;
 }
 
 
+/* Classes & IDs */
 /* Header */
 .h-flex {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-evenly;
 }
 
-.h-title-flex {
+#h-title-flex {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	padding-right: 3.5em;
 	flex: 1;
 }
 
-.h-logo-flex {
+#h-logo-flex {
 	display: none;
 }
 
 
+	/* Navbar */
+	.h-drop-btn {
+		background-color: unset;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	.h-drop-btn svg, .h-drop-btn image {
+		width: 20px;
+		height: 26px;
+	}
+
+	.h-drop-content {
+		display: none;
+		position: absolute;
+		background-color: #252525;
+		min-width: 7.9em;
+		z-index: 1;
+	}
+
+	.h-drop-content li {
+		color: rgb(201, 201, 201);
+		padding: .4em;
+		text-decoration: none;
+		display: block;
+	}
+
+	.h-drop-content li:hover {
+		background-color: #535353;
+		color: white;
+		cursor: default;
+	}
+
+	#h-drop-flex {
+		position: absolute;
+		display: inline-block;
+		max-height: 2.3em;
+		padding: .1em .2em;
+		left: 0;
+		top: 0;
+	}
+
+	#h-drop-flex:hover .h-drop-content {
+		display: block;
+	}
+
+
 /* Form */
+.s-flex {
+	margin: 0 1.5em;
+}
+
 .f-flex {
 	width: 13em;
 	margin: auto;
 	text-align: center;
+}
+
+.f-flex h2 {
+	margin: 0;
+	margin-top: 2em;
 }
 
 .f-input-flex {

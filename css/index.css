@@ -1,35 +1,40 @@
-/* Custom Classes */
+/* Elements */
+body {
+	margin: 0;
+}
 
+
+/* Classes & IDs */
 /* Header */
 .h-flex {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
-.h-title-flex {
+.h-title-text {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
-.h-logo-flex {
+#h-logo-flex {
     display: none;
 }
 
-.s-flex {
-    display: flex;
-}
 
-.s-flex > div {
-    margin: auto;
-}
+    /* Buttons Section */
+    .s-flex {
+        display: flex;
+        flex-direction: column;
+    }
 
-.s-div-flex {
-    margin: 2.5em 1.3em;
-}
+    .s-button-flex {
+        margin: 6.5em 1.3em 0;
+    }
 
-.s-btn-flex {
-    font-size: 1.8rem;
-    padding: .8em 1.8em;
-    width: 10em;
-}
+    .s-btn {
+        font-size: 1.8rem;
+        padding: .8em 1.8em;
+        width: 10em;
+    }

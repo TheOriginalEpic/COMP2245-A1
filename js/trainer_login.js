@@ -19,14 +19,14 @@ function loadData() {
 		{
 			email: "jjd@fitnessuniverse.com",
 			firstName: "Jennifer",
-			lastname: "Davis",
+			lastName: "Davis",
 			password:"Anoth3rpa$$"
 		},
 
 		{
 			email: "boss_man@fitnessuniverse.bb",
 			firstName: "Anderson",
-			surname: "Alleyne",
+			lastName: "Alleyne",
 			password:"Pa$sw0rd"
 		}
 	]
@@ -49,7 +49,7 @@ function loadData() {
 		{
 			email: "gene.rodenberry@fitnessuniverse.bb",
 			firstName: "Gene",
-			surname: "Rodenberry",
+			lastName: "Rodenberry",
 			password:"th3#@st3RPl@n"
 		}
 	]
@@ -235,6 +235,7 @@ var loginEmployee = function(data) {
 	let trainerInput = formData["trainer"];
 	let trainerStorage = JSON.parse(localStorage.getItem("trainers"));
 	let trainerLength = trainerStorage.length;
+	let trainerObject = [{}];
 
 	if (!verifyPassword(passInput)) {
 		errorDisplay("The password you entered has the incorrect format", "form-err-text");
@@ -250,15 +251,18 @@ var loginEmployee = function(data) {
 		for (let loop = 0; loop < trainerLength; loop++) {
 			if (trainerStorage[loop]["email"] == emailInput && trainerStorage[loop]["password"] == passInput) {
 				sessionStorage.clear();
-				sessionStorage.setItem("email", trainerStorage[loop].email);
-				sessionStorage.setItem("firstName", trainerStorage[loop].firstName);
-				sessionStorage.setItem("lastName", trainerStorage[loop].lastName);
+
+				trainerObject[0]["email"] = trainerStorage[loop].email;
+				trainerObject[0]["firstName"] = trainerStorage[loop].firstName;
+				trainerObject[0]["lastName"] = trainerStorage[loop].lastName;
+
+				sessionStorage.setItem("trainer", JSON.stringify(trainerObject[0]));
 				break;
 			}
 		}
 	}
 
-	if (!sessionStorage.getItem("email")) {
+	if (!sessionStorage.getItem("trainer")) {
 		errorDisplay("This user does not exsist.", "form-err-text");
 		return false;
 	}
@@ -266,7 +270,7 @@ var loginEmployee = function(data) {
 	// window.location.href = '';
 
 	errorDisplay("", "form-err-text");
-	return false;
+	return true;
 }
 
 var findLostPassword = function(data) {

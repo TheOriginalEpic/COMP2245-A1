@@ -19,14 +19,14 @@ function loadData() {
 		{
 			email: "jjd@fitnessuniverse.com",
 			firstName: "Jennifer",
-			lastname: "Davis",
+			lastName: "Davis",
 			password:"Anoth3rpa$$"
 		},
 
 		{
 			email: "boss_man@fitnessuniverse.bb",
 			firstName: "Anderson",
-			surname: "Alleyne",
+			lastName: "Alleyne",
 			password:"Pa$sw0rd"
 		}
 	]
@@ -49,7 +49,7 @@ function loadData() {
 		{
 			email: "gene.rodenberry@fitnessuniverse.bb",
 			firstName: "Gene",
-			surname: "Rodenberry",
+			lastName: "Rodenberry",
 			password:"th3#@st3RPl@n"
 		}
 	]
@@ -202,6 +202,7 @@ var loginMember = function(data) {
     let passInput = formData["password"];
     let memberStorage = JSON.parse(localStorage.getItem("members"));
     let memberLength = memberStorage.length;
+	let memberObject = [{}];
 
     if (!verifyPassword(passInput)) {
         errorDisplay("The password you entered has the incorrect format", "form-err-text");
@@ -214,14 +215,17 @@ var loginMember = function(data) {
     for (let loop = 0; loop < memberLength; loop++) {
         if (memberStorage[loop]["member_id"] == memberInput && memberStorage[loop]["password"] == passInput) {
 			sessionStorage.clear();
-            sessionStorage.setItem("member_id", memberStorage[loop].member_id);
-            sessionStorage.setItem("firstName", memberStorage[loop].firstName);
-            sessionStorage.setItem("lastName", memberStorage[loop].lastName);
+
+			memberObject[0]["member_id"] = memberStorage[loop].member_id;
+			memberObject[0]["firstName"] = memberStorage[loop].firstName;
+			memberObject[0]["lastName"] = memberStorage[loop].lastName;
+
+            sessionStorage.setItem("member", JSON.stringify(memberObject[0]));
             break;
         }
     }
 
-    if (!sessionStorage.getItem("member_id")) {
+    if (!sessionStorage.getItem("member")) {
         errorDisplay("This user does not exsist.", "form-err-text");
 		return false;
     }

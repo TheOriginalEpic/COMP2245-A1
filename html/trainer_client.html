@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="/css/trainer_client.css">
+	<link rel="icon" type="image/x-icon" href="/resources/TFU-logo-transparent.svg">
+	<title>The Fitness Universe | Trainer Client</title>
+</head>
+<body onload="checkLogin()">
+	<div class="h-flex">
+		<div id="h-drop-flex">
+			<button type="button" class="h-drop-btn">
+				<svg width="30" height="36" xmlns="http://www.w3.org/2000/svg" version="1.1">
+					<image href="/resources/menu_hamburger.svg" width="30" height="36"/>
+				</svg>
+			</button>
+
+			<div class="h-drop-content">
+				<li>Gym Schedule</li>
+				<li onclick="signOut()">Sign Out</li>
+			</div>
+		</div>
+
+		<div id="h-title-flex">
+			<div class="h-title-text">
+				<h1>The Fitness Universe</h1>
+				<h2>Live Your Best Life</h2>
+			</div>
+
+			<div class="h-title-text">
+				<p>Trainer: Dominic Ward</p>
+				<p>Trainer ID #: 988888</p>
+			</div>
+		</div>
+
+		<div id="h-logo-flex">
+			<svg width="80" height="86" xmlns="http://www.w3.org/2000/svg" version="1.1">
+				<image href="/resources/TFU-logo-transparent.svg" width="80" height="86"/>
+			</svg>
+		</div>
+	</div>
+
+	<section class="s-flex">
+		<div class="s-flex-content">
+			<div class="s-button-flex">
+				<a href="#"><button>Clients</button></a>
+				<button>Training Schedule</button>
+			</div>
+
+			<div class="s-button-flex">
+				<button>Meal Plans</button>
+				<button>My Account</button>
+			</div>
+		</div>
+<!--
+		<div class="s-flex-content"> -->
+		<div id="s-flex-search">
+			<input type="text" name="search" id="search" placeholder="Enter search info">
+			<button type="button">Search</button>
+		</div>
+
+		<div id="s-flex-table">
+			<table class="s-table">
+				<thead class="s-table-heading">
+					<tr>
+						<th>Action</th>
+						<th>Membership</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+					</tr>
+				</thead>
+				<tbody class="s-table-body">
+					<tr>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- </div> -->
+	</section>
+</body>
+
+<script src="/js/trainer_client.js"></script>
+</html>

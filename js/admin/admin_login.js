@@ -19,14 +19,14 @@ function loadData() {
 		{
 			email: "jjd@fitnessuniverse.com",
 			firstName: "Jennifer",
-			lastname: "Davis",
+			lastName: "Davis",
 			password:"Anoth3rpa$$"
 		},
 
 		{
 			email: "boss_man@fitnessuniverse.bb",
 			firstName: "Anderson",
-			surname: "Alleyne",
+			lastName: "Alleyne",
 			password:"Pa$sw0rd"
 		}
 	]
@@ -49,7 +49,7 @@ function loadData() {
 		{
 			email: "gene.rodenberry@fitnessuniverse.bb",
 			firstName: "Gene",
-			surname: "Rodenberry",
+			lastName: "Rodenberry",
 			password:"th3#@st3RPl@n"
 		}
 	]
@@ -235,6 +235,7 @@ var loginEmployee = function(data) {
 	let employeeInput = formData["employee"];
 	let managerStorage = JSON.parse(localStorage.getItem("managers"));
 	let managerLength = managerStorage.length;
+	let managerObject = [{}];
 
 	if (!verifyPassword(passInput)) {
 		errorDisplay("The password you entered has the incorrect format", "form-err-text");
@@ -250,15 +251,18 @@ var loginEmployee = function(data) {
 		for (let loop = 0; loop < managerLength; loop++) {
 			if (managerStorage[loop]["email"] == emailInput && managerStorage[loop]["password"] == passInput) {
 				sessionStorage.clear();
-				sessionStorage.setItem("email", managerStorage[loop].email);
-				sessionStorage.setItem("firstName", managerStorage[loop].firstName);
-				sessionStorage.setItem("lastName", managerStorage[loop].lastName);
+
+				managerObject[0]["email"] = managerStorage[loop].email
+				managerObject[0]["firstName"] = managerStorage[loop].firstName;
+				managerObject[0]["lastName"] = managerStorage[loop].lastName;
+
+				sessionStorage.setItem("manager", JSON.stringify(managerObject[0]));
 				break;
 			}
 		}
 	}
 
-	if (!sessionStorage.getItem("email")) {
+	if (!sessionStorage.getItem("manager")) {
 		errorDisplay("This user does not exsist.", "form-err-text");
 		return false;
 	}
@@ -266,8 +270,10 @@ var loginEmployee = function(data) {
 	// window.location.href = '';
 
 	errorDisplay("", "form-err-text");
-	return false;
+	return true;
 }
+
+console.log(loginEmployee(JSON.stringify({"email": "gene.rodenberry@fitnessuniverse.bb", "password": "th3#@st3RPl@n", "employee": "manager"})));
 
 var findLostPassword = function(data) {
 	let formData = JSON.parse(data);

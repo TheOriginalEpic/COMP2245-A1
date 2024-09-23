@@ -20,14 +20,14 @@ function loadData()
 		{
 			email: "jjd@fitnessuniverse.com",
 			firstName: "Jennifer",
-			lastname: "Davis",
+			lastName: "Davis",
 			password:"Anoth3rpa$$"
 		},
 
 		{
 			email: "boss_man@fitnessuniverse.bb",
 			firstName: "Anderson",
-			surname: "Alleyne",
+			lastName: "Alleyne",
 			password:"Pa$sw0rd"
 		}
 	]
@@ -50,7 +50,7 @@ function loadData()
 		{
 			email: "gene.rodenberry@fitnessuniverse.bb",
 			firstName: "Gene",
-			surname: "Rodenberry",
+			lastName: "Rodenberry",
 			password:"th3#@st3RPl@n"
 		}
 	]
