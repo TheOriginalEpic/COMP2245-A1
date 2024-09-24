@@ -202,7 +202,7 @@ var loginMember = function(data) {
     let passInput = formData["password"];
     let memberStorage = JSON.parse(localStorage.getItem("members"));
     let memberLength = memberStorage.length;
-	let memberObject = [{}];
+	let memberObject = new Object();
 
     if (!verifyPassword(passInput)) {
         errorDisplay("The password you entered has the incorrect format", "form-err-text");
@@ -216,11 +216,11 @@ var loginMember = function(data) {
         if (memberStorage[loop]["member_id"] == memberInput && memberStorage[loop]["password"] == passInput) {
 			sessionStorage.clear();
 
-			memberObject[0]["member_id"] = memberStorage[loop].member_id;
-			memberObject[0]["firstName"] = memberStorage[loop].firstName;
-			memberObject[0]["lastName"] = memberStorage[loop].lastName;
+			memberObject["member_id"] = memberStorage[loop].member_id;
+			memberObject["firstName"] = memberStorage[loop].firstName;
+			memberObject["lastName"] = memberStorage[loop].lastName;
 
-            sessionStorage.setItem("member", JSON.stringify(memberObject[0]));
+            sessionStorage.setItem("member", JSON.stringify(memberObject));
             break;
         }
     }

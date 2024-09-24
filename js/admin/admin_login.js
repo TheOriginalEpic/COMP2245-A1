@@ -235,7 +235,7 @@ var loginEmployee = function(data) {
 	let employeeInput = formData["employee"];
 	let managerStorage = JSON.parse(localStorage.getItem("managers"));
 	let managerLength = managerStorage.length;
-	let managerObject = [{}];
+	let managerObject = new Object();
 
 	if (!verifyPassword(passInput)) {
 		errorDisplay("The password you entered has the incorrect format", "form-err-text");
@@ -252,11 +252,11 @@ var loginEmployee = function(data) {
 			if (managerStorage[loop]["email"] == emailInput && managerStorage[loop]["password"] == passInput) {
 				sessionStorage.clear();
 
-				managerObject[0]["email"] = managerStorage[loop].email
-				managerObject[0]["firstName"] = managerStorage[loop].firstName;
-				managerObject[0]["lastName"] = managerStorage[loop].lastName;
+				managerObject["email"] = managerStorage[loop].email
+				managerObject["firstName"] = managerStorage[loop].firstName;
+				managerObject["lastName"] = managerStorage[loop].lastName;
 
-				sessionStorage.setItem("manager", JSON.stringify(managerObject[0]));
+				sessionStorage.setItem("manager", JSON.stringify(managerObject));
 				break;
 			}
 		}
