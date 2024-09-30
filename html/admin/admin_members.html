@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<link rel="stylesheet" href="/css/trainer.css">
+	<link rel="stylesheet" href="/css/admin/admin.css">
 	<link rel="icon" type="image/x-icon" href="/resources/TFU-logo-transparent.svg">
-	<title>The Fitness Universe | Trainer Client</title>
+	<title>The Fitness Universe | Manager Member Client</title>
 </head>
 <body onload="checkLogin()">
 	<div class="flex-container">
@@ -35,15 +35,16 @@
 
 			<section class="section-container">
 				<div class="s-btn-container">
-					<a href="trainer_client.html"><button>Clients</button></a>
-					<button>Training Schedule</button>
+					<a href="admin_members.html"><button>Members</button></a>
+					<button>Trainers</button>
 				</div>
 
 				<div class="s-btn-container">
-					<button>Meal Plans</button>
+					<button>Reports</button>
 					<button>My Account</button>
 				</div>
 			</section>
+
 		</div>
 
 		<div class="logo-container">
@@ -53,10 +54,11 @@
 		</div>
 	</div>
 
-	<section id="s-container-trainer" class="section-container">
+	<section id="s-container-admin" class="section-container">
 		<div class="s-container-search">
 			<input type="text" name="search" id="search" placeholder="Enter search info">
 			<button type="button">Search</button>
+            <a href="#">New Member</a>
 		</div>
 
 		<div class="s-container-table">
@@ -72,8 +74,9 @@
 				<tbody class="s-table-body">
 					<tr>
 						<td>
-							<a href="#">View</a>
-							<a href="#">Book</a>
+							<a href="#">Edit</a>
+							<a href="#">Cancel</a>
+                            <a href="#">Renew</a>
 						</td>
 						<td>Bronze</td>
 						<td>First Name</td>
@@ -81,8 +84,9 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="#">View</a>
-							<a href="#">Book</a>
+							<a href="#">Edit</a>
+							<a href="#">Cancel</a>
+                            <a href="#">Renew</a>
 						</td>
 						<td>Bronze</td>
 						<td>First Name</td>
@@ -90,8 +94,9 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="#">View</a>
-							<a href="#">Book</a>
+							<a href="#">Edit</a>
+							<a href="#">Cancel</a>
+                            <a href="#">Renew</a>
 						</td>
 						<td>Gold</td>
 						<td>First Name</td>
@@ -99,8 +104,9 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="#">View</a>
-							<a href="#">Book</a>
+							<a href="#">Edit</a>
+							<a href="#">Cancel</a>
+                            <a href="#">Renew</a>
 						</td>
 						<td>Platinum</td>
 						<td>First Name</td>
@@ -108,8 +114,9 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="#">View</a>
-							<a href="#">Book</a>
+							<a href="#">Edit</a>
+							<a href="#">Cancel</a>
+                            <a href="#">Renew</a>
 						</td>
 						<td>Silver</td>
 						<td>First Name</td>
@@ -121,5 +128,5 @@
 	</section>
 </body>
 
-<script src="/js/trainer.js"></script>
+<script src="/js/admin/admin.js"></script>
 </html>

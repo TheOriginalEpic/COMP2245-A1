@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/css/admin/admin_login.css">
+	<link rel="stylesheet" href="/css/admin/admin.css">
 	<link rel="icon" type="image/x-icon" href="/resources/TFU-logo-transparent.svg">
 	<title>The Fitness Universe | Recover Password</title>
 </head>
 <body onload="loadData()">
-	<section>
-		<form id="recover-form" class="f-flex" autocomplete="on" target="_self" method="POST" onsubmit="return findLostPassword(JSON.stringify({email: this.email_recover.value, employee: this.employee.value}))">
-			<div class="f-rInput-flex f-input-flex">
+	<section class="section-container">
+		<form id="recover-form" class="form-container" autocomplete="on" target="_self" method="POST" onsubmit="return findLostPassword(JSON.stringify({email: this.email_recover.value, employee: this.employee.value}))">
+			<div id="f-recoverInput" class="f-input-flex">
 				<label for="email_recover">Enter the email address <wbr>attached to your account to <wbr>recover your password</label>
 
 				<div>
@@ -18,7 +18,7 @@
 				</div>
 
 				<input type="email" name="email_recover" id="email_recover" required>
-				<span class="popup" id="forgot-popup"></span>
+				<span class="recover-popup" id="forgot-popup"></span>
 			</div>
 
 
@@ -26,12 +26,12 @@
 				<input type="hidden" id="employee" name="employee" value="manager" readonly>
 			</div>
 
-			<div class="f-rSubmit-flex f-submit-flex">
+			<div id="f-recoverSubmit" class="f-submit-flex">
 				<input type="submit" name="recover" id="recover" value="Recover">
 			</div>
 		</form>
 	</section>
 </body>
 
-<script src="/js/admin/admin_login.js"></script>
+<script src="/js/admin/admin.js"></script>
 </html>

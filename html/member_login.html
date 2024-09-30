@@ -3,49 +3,49 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<link rel="stylesheet" href="/css/member_login.css">
+	<link rel="stylesheet" href="/css/member.css">
 	<link rel="icon" type="image/x-icon" href="/resources/TFU-logo-transparent.svg">
 	<title>The Fitness Universe | Members</title>
 </head>
 <body onload="loadData()">
-	<div class="h-flex">
-		<div id="h-drop-flex">
-			<button type="button" class="h-drop-btn">
+	<div class="flex-container">
+		<div class="hamburger-drop">
+			<button type="button" class="drop-btn">
 				<svg width="30" height="36" xmlns="http://www.w3.org/2000/svg" version="1.1">
 					<image href="/resources/menu_hamburger.svg" width="30" height="36"/>
 				</svg>
 			</button>
 
-			<div class="h-drop-content">
+			<div class="drop-content">
 				<li>View Schedule</li>
 			</div>
 		</div>
 
-		<div id="h-title-flex">
-			<div class="h-title-text">
+		<div class="title-container">
+			<div class="title-container-text">
 				<h1>The Fitness Universe</h1>
 				<h2>Live Your Best Life</h2>
 			</div>
 
-			<section class="s-flex">
-				<form id="member-form" class="f-flex" autocomplete="off" target="_self" method="POST" onsubmit="return loginMember(JSON.stringify({member_id: this.member.value, password: this.pass.value}))">
+			<section class="section-container">
+				<form id="member-form" class="form-container" autocomplete="off" target="_self" method="POST" onsubmit="return loginMember(JSON.stringify({member_id: this.member.value, password: this.pass.value}))">
 					<h2>Member Login</h2>
 
 					<div>
-						<p style="display:none; color:#B81C00;" id="form-err-text"></p>
+						<p style="display:none; color:#B81C00;" id="f-err-text"></p>
 					</div>
 
-					<div class="f-input-flex">
+					<div class="f-input-container">
 						<label for="member">Membership #</label>
-						<input type="text" maxlength="6" id="member" name="member" required>
+						<input type="text" minlength="6" maxlength="6" id="member" name="member" required>
 					</div>
 
-					<div class="f-input-flex">
+					<div class="f-input-container">
 						<label for="pass">Password</label>
 						<input type="password" maxlength="16" minlength="8" id="pass" name="pass" placeholder="**********" required>
 					</div>
 
-					<div class="f-submit-flex">
+					<div class="f-submit-container">
 						<input type="submit" value="Log In">
 						<a href="#">Recover Password</a>
 					</div>
@@ -53,7 +53,7 @@
 			</section>
 		</div>
 
-		<div id="h-logo-flex">
+		<div class="logo-container">
 			<svg width="80" height="86" xmlns="http://www.w3.org/2000/svg" version="1.1">
 				<image href="/resources/TFU-logo-transparent.svg" width="80" height="86"/>
 			</svg>
@@ -61,5 +61,5 @@
 	</div>
 </body>
 
-<script src="/js/member_login.js"></script>
+<script src="/js/member.js"></script>
 </html>

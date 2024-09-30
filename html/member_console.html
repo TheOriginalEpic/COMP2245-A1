@@ -3,49 +3,49 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<link rel="stylesheet" href="/css/member_console.css">
+	<link rel="stylesheet" href="/css/member.css">
 	<link rel="icon" type="image/x-icon" href="/resources/TFU-logo-transparent.svg">
 	<title>The Fitness Universe | Member Console</title>
 </head>
 <body onload="checkLogin()">
-	<div class="h-flex">
-		<div id="h-drop-flex">
-			<button type="button" class="h-drop-btn">
+	<div class="flex-container">
+		<div class="hamburger-drop">
+			<button type="button" class="drop-btn">
 				<svg width="30" height="36" xmlns="http://www.w3.org/2000/svg" version="1.1">
 					<image href="/resources/menu_hamburger.svg" width="30" height="36"/>
 				</svg>
 			</button>
 
-			<div class="h-drop-content">
+			<div class="drop-content">
 				<li onclick="signOut()">Sign Out</li>
 			</div>
 		</div>
 
-		<div id="h-title-flex">
-			<div class="h-title-text">
+		<div class="title-container">
+			<div class="title-container-text">
 				<h1>The Fitness Universe</h1>
 				<h2>Live Your Best Life</h2>
 			</div>
 
-			<div class="h-title-text">
+			<div class="title-container-text">
 				<p>Name: Dominic Ward</p>
 				<p>Membership #: 988888</p>
 			</div>
 
-			<section class="s-flex">
-				<div class="s-button-flex">
+			<section class="section-container">
+				<div class="s-btn-container">
 					<button>My Account</button>
 					<button>Book a Training Session</button>
 				</div>
 
-				<div class="s-button-flex">
+				<div class="s-btn-container">
 					<button>Register for a Class</button>
 					<button>Book a Court</button>
 				</div>
 			</section>
 		</div>
 
-		<div id="h-logo-flex">
+		<div class="logo-container">
 			<svg width="80" height="86" xmlns="http://www.w3.org/2000/svg" version="1.1">
 				<image href="/resources/TFU-logo-transparent.svg" width="80" height="86"/>
 			</svg>
@@ -53,5 +53,5 @@
 	</div>
 </body>
 
-<script src="/js/member_console.js"></script>
+<script src="/js/member.js"></script>
 </html>

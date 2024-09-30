@@ -1,0 +1,319 @@
+/* Elements */
+body {
+	margin: 0;
+}
+
+
+/* Header Container */
+.flex-container {
+	display: flex;
+	justify-content: space-between;
+	font-size: 80%;
+	flex-wrap: nowrap;
+}
+
+
+/* Navbar */
+.hamburger-drop {
+	display: inline-block;
+	position: relative;
+	max-height: 2.3em;
+	padding: .1em .2em;
+	left: 0;
+	top: 0;
+}
+
+.hamburger-drop:hover .drop-content {
+	display: block;
+}
+
+.hamburger-drop .drop-btn {
+	background-color: unset;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+.drop-btn svg, .drop-btn image {
+	width: 2em;
+	height: 2em;
+}
+
+.drop-content {
+	display: none;
+	position: absolute;
+	background-color: #252525;
+	min-width: 7.9em;
+	z-index: 1;
+}
+
+.drop-content li {
+	font-size: .9rem;
+	display: block;
+	color: rgb(201, 201, 201);
+	padding: .4em;
+	text-decoration: none;
+}
+
+.drop-content li:hover {
+	background-color: #535353;
+	color: white;
+	cursor: default;
+}
+
+
+/* Title */
+.title-container {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.title-container-text {
+	text-align: center;
+}
+
+.title-container-text p {
+	font-size: 1.19rem;
+}
+
+
+/* Logo */
+.logo-container {
+	display: none;
+}
+
+
+/* Section */
+.section-container {
+	text-align: center;
+}
+
+.s-container-table, .s-container-search {
+	margin: 0 .5em;
+}
+
+#s-container-trainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+/* Section Buttons */
+.s-btn-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.s-btn-container button {
+	font-size: 1rem;
+	padding: 1em .8em;
+	margin: .8em;
+	width: 10em;
+	height: 5em;
+}
+
+
+/* Section Search */
+.s-container-search {
+	display: flex;
+	margin: 2.5em 0;
+}
+
+.s-container-search input {
+	flex-grow: 10;
+}
+
+.s-container-search button {
+	flex: 1;
+	padding: .5em 1em;
+	margin-left: 1em;
+}
+
+
+/* Section Table */
+.s-container-table {
+	display: flex;
+	flex-direction: column;
+}
+
+#section-container-schedule {
+	margin: .7em;
+	border: 1px solid black;
+}
+
+#section-container-schedule tr, #section-container-schedule caption {
+	border-bottom: .1em solid black;
+}
+
+
+
+/* Table */
+.s-table {
+	border-collapse: collapse;
+	text-align: left;
+}
+
+.s-table-heading {
+	border-bottom: .1em solid black;
+}
+
+.s-table-heading th {
+	padding: 1em .5em;
+}
+
+.s-table-heading th:first-child, .s-table-body td:first-child {
+	text-align: center;
+}
+
+.s-table-body td {
+	padding: 1em .5em;
+	vertical-align: top;
+}
+
+.s-table-body td a {
+	display: block;
+}
+
+.s-table-body td a:first-child {
+   margin-bottom: 1em;
+}
+
+
+/* Table Calendar */
+.s-table-date {
+	padding: 1em 0;
+}
+
+.s-table-date span:first-child {
+	float: left;
+	margin-left: 1em;
+	border: none !important;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.s-table-date span:last-child {
+	float: right;
+	margin-right: 1em;
+	border: none !important;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#section-container-schedule th, #section-container-schedule td {
+	padding-left: .2em;
+	padding-right: .2em;
+}
+
+#section-container-schedule td {
+	padding-bottom: .6em;
+	padding-top: .6em;
+}
+
+#section-container-schedule .s-table {
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+#section-container-schedule .s-container-table {
+	margin: 0;
+}
+
+#section-container-schedule .s-table-body tr:last-child {
+	border: none;
+}
+
+
+/* Form */
+.form-container {
+	width: 13em;
+	margin: auto;
+}
+
+.form-container h2 {
+	margin: 2em 0 0;
+}
+
+.f-input-container {
+	display: flex;
+	font-size: 1.6rem;
+	padding: 1.5em 0;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.f-input-container > label {
+	flex: 1;
+	padding: 1em 0;
+}
+
+.f-input-container > input {
+	flex: 0;
+	padding: .7em .5em;
+}
+
+.f-submit-container {
+	display: flex;
+	flex-direction: column;
+	font-size: 1.3rem;
+	padding: 1.4em 0;
+	align-items: center;
+}
+
+.f-submit-container > input {
+	font-size: 1.5rem;
+	padding: .25em 1.2em;
+	margin: 0 0 2em;
+}
+
+
+/* Form Recovery */
+#f-recoverInput {
+	font-size: 1.25rem;
+	padding: 50% 0 1em 0;
+}
+
+#f-recoverInput > input {
+	padding: .5em 1em;
+	margin: 2em 0;
+}
+
+#f-recoverInput > label {
+	padding: 1em 0;
+}
+
+#f-recoverSubmit > input {
+	font-size: 1rem;
+	padding: .4em 1.2em;
+	margin: 0;
+}
+
+
+/* Recover Popup */
+.recover-popup {
+	display: none;
+	position: relative;
+	background-color: rgb(37, 37, 37);
+	padding: .6em;
+	z-index: 1;
+	color: rgb(226, 226, 226);
+	border-radius: 5px;
+	right: .8em;
+	top: .32em;
+	right: 0;
+}
+
+.recover-popup::after {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -0.4em;
+	border-width: .4em;
+	border-style: solid;
+	border-color: transparent transparent rgb(37, 37, 37) transparent;
+}

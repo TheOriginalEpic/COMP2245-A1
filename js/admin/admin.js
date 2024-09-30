@@ -1,12 +1,3 @@
-/**
-* loadData function for Assignment #1
-*
-* Add this function to your external JavaScript file. The simplest way to invoke it is
-* to use the onload eventhandler on the body tag of the document, i.e. <body onload="loadData()">.
-* If successful, you should be able to see three sets of data in localStorage the first is
-* trainer information (trainers), the second is manager information (managers) and the third is the member information (members).
-* Feel free to modify this code to suit your field names if necessary.
-*/
 function loadData() {
 	var trainers = [
 		{
@@ -130,8 +121,13 @@ function loadData() {
 	}
 }
 
+
+// Stores the webpage html as an object in variable "docDOM"
 var docDOM = document;
 
+
+// Variable function "errorDisplay" displays text on the screen dependent on string entered and an ID to target
+// if no string is entered then the targeted element by ID's string is cleared
 var errorDisplay = function(err, id) {
 	let errorString = [];
 
@@ -150,6 +146,8 @@ var errorDisplay = function(err, id) {
 	}
 }
 
+
+// Variable function "verifyEmail" checks the inputted email to ensure that the domain name is one of three values: fitnessuniverse.com, fitnessuniverse.bb or fitnessu.life and is a correctly formatted email address.
 var verifyEmail = function(email) {
 	let emailLCase = email.toLowerCase();
 	let emailLen = emailLCase.length;
@@ -193,6 +191,10 @@ var verifyEmail = function(email) {
 	return true;
 }
 
+// Variable function "verifyPassword" checks the inputted password to ensure it is:
+// between 8 - 16 characters long,
+// has at least one of the following special characters: &, $, #, @ and
+// has at least one upper case letter and at least one number.
 var verifyPassword = function(pwd) {
 	let specialChar = ['&', '$', '#', '@'];
 	let passLength = pwd.length;
@@ -228,14 +230,17 @@ var verifyPassword = function(pwd) {
 	return false;
 }
 
+
+// Variable function "loginEmployee" send the user to a specific page after their password and member number is verification
+// After successful verification and validation users info is stored in session storage
 var loginEmployee = function(data) {
 	let formData = JSON.parse(data);
 	let emailInput = formData["email"];
 	let passInput = formData["password"];
-	let trainerInput = formData["trainer"];
-	let trainerStorage = JSON.parse(localStorage.getItem("trainers"));
-	let trainerLength = trainerStorage.length;
-	let trainerObject = new Object();
+	let employeeInput = formData["employee"];
+	let managerStorage = JSON.parse(localStorage.getItem("managers"));
+	let managerLength = managerStorage.length;
+	let managerObject = new Object();
 
 	if (!verifyPassword(passInput)) {
 		errorDisplay("The password you entered has the incorrect format", "form-err-text");
@@ -247,22 +252,22 @@ var loginEmployee = function(data) {
 		return false;
 	}
 
-	if (trainerInput == "trainer") {
-		for (let loop = 0; loop < trainerLength; loop++) {
-			if (trainerStorage[loop]["email"] == emailInput && trainerStorage[loop]["password"] == passInput) {
+	if (employeeInput == "manager") {
+		for (let loop = 0; loop < managerLength; loop++) {
+			if (managerStorage[loop]["email"] == emailInput && managerStorage[loop]["password"] == passInput) {
 				sessionStorage.clear();
 
-				trainerObject["email"] = trainerStorage[loop].email;
-				trainerObject["firstName"] = trainerStorage[loop].firstName;
-				trainerObject["lastName"] = trainerStorage[loop].lastName;
+				managerObject["email"] = managerStorage[loop].email
+				managerObject["firstName"] = managerStorage[loop].firstName;
+				managerObject["lastName"] = managerStorage[loop].lastName;
 
-				sessionStorage.setItem("trainer", JSON.stringify(trainerObject));
+				sessionStorage.setItem("manager", JSON.stringify(managerObject));
 				break;
 			}
 		}
 	}
 
-	if (!sessionStorage.getItem("trainer")) {
+	if (!sessionStorage.getItem("manager")) {
 		errorDisplay("This user does not exsist.", "form-err-text");
 		return false;
 	}
@@ -273,12 +278,14 @@ var loginEmployee = function(data) {
 	return true;
 }
 
+
+// Variable function "findLostPassword" checks the inputted email with the dataset and displays a message dependent on if the email exsists or does not
 var findLostPassword = function(data) {
 	let formData = JSON.parse(data);
 	let emailInput = formData["email"];
-	let trainerInput = formData["trainer"];
-	let trainerStorage = JSON.parse(localStorage.getItem("trainers"));
-	let trainerLength = trainerStorage.length;
+	let employeeInput = formData["employee"];
+	let managerStorage = JSON.parse(localStorage.getItem("managers"));
+	let managerLength = managerStorage.length;
 	let emailFound = false;
 
 	if (!verifyEmail(emailInput)) {
@@ -286,9 +293,9 @@ var findLostPassword = function(data) {
 		return false;
 	}
 
-	if (trainerInput == "trainer") {
-		for (let loop = 0; loop < trainerLength; loop++) {
-			if (trainerStorage[loop]["email"] == emailInput) {
+	if (employeeInput == "manager") {
+		for (let loop = 0; loop < managerLength; loop++) {
+			if (managerStorage[loop]["email"] == emailInput) {
 				emailFound = true;
 				break;
 			}
@@ -305,4 +312,19 @@ var findLostPassword = function(data) {
 
 	errorDisplay("", "form-rErr-text");
 	return false;
+}
+
+// Redirects user to member login page if there is no seesion storage data
+var checkLogin = function() {
+    if (!sessionStorage.getItem("manager")) {
+		window.location.href = "admin_login.html";
+	}
+}
+
+
+// Redirects user to member login page if they click the signout button in the hamburger menu
+// Users session storage is cleared
+var signOut = function() {
+    sessionStorage.clear();
+    window.location.href = "admin_login.html";
 }
